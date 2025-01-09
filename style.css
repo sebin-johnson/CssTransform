@@ -1,0 +1,162 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+}
+
+header {
+    text-align: center;
+    background-color: #500073;
+    color: white;
+    padding: 1em 0;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.li {
+    margin: 5px 10px;
+    display: inline-block;
+}
+
+.links {
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+}
+
+.links:hover {
+    color: #F14A00;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 80%;
+    margin: 100px;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.grid-item p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+.rotate img:hover {
+    transform: rotate(15deg);
+}
+
+.scale img:hover {
+    transform: scale(1.2);
+}
+
+.skew img:hover {
+    transform: skew(10deg, 5deg);
+}
+
+.translate img:hover {
+    transform: translateX(20px);
+}
+
+.perspective img:hover {
+    transform: perspective(500px) rotateY(15deg);
+}
+
+.combination img:hover {
+    transform: matrix(1, 0.5, -0.5, 1, 10, 5);;
+}
+
+footer {
+    width: 100%;
+    background-color: #2C2C2C;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    margin-top: auto;
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 15px;
+        width: 90%; 
+        margin: 50px auto; 
+    }
+
+    .grid-item img {
+        max-width: 250px; 
+    }
+
+    header h1 {
+        font-size: 1.8em; 
+    }
+
+    ul {
+        flex-wrap: wrap;
+    }
+
+    .li {
+        margin: 5px 5px; 
+    }
+}
+
+/* For mobile devices */
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr; 
+        gap: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .li {
+        margin: 5px 2px; 
+    }
+
+    .links {
+        font-size: 0.9em; 
+    }
+
+    footer {
+        font-size: 0.8em; 
+    }
+
+    .grid-item img {
+        max-width: 100%; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    ul {
+        display: none;
+    }
+}
